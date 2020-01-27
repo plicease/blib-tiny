@@ -1,55 +1,20 @@
-# tlib [![Build Status](https://secure.travis-ci.org/plicease/tlib.png)](http://travis-ci.org/plicease/tlib)
+# blib::tiny [![Build Status](https://secure.travis-ci.org/plicease/blib-tiny.png)](http://travis-ci.org/plicease/blib-tiny)
 
-Like blib but for t/lib
+Like blib but lighter
 
 # SYNOPSIS
 
-From your .t file
-
-```perl
-use Test::More;
-use tlib;
-...
 ```
-
-From the command line
-
-```
-perl -Mtlib t/foo.t
+perl -Mblib::tiny script [args...]
 ```
 
 # DESCRIPTION
 
-This pragma is just a short cut for `use lib 't/lib'` with some handy
-overrides.  Avoids using any modules other than the [strict](https://metacpan.org/pod/strict) and [warnings](https://metacpan.org/pod/warnings)
-pragmas.
+Works similar to [blib](https://metacpan.org/pod/blib) except it doesn't use any modules other than the
+pragma's [strict](https://metacpan.org/pod/strict) and [warnings](https://metacpan.org/pod/warnings) to avoid polluting the namespace.
 
-# USAGE
-
-There are some useful overrides, that are used in this order:
-
-- argument
-
-    ```perl
-    use tlib $dir;
-    perl -Mtlib=$dir
-    ```
-
-    If a directory is specified as an argument to the pragma, that will be used.
-
-- PERL\_TLIB
-
-    If the environment variable `PERL_TLIB` is specified that will be used.
-
-- `t/lib`
-
-    If the relative directory `t/lib` exists, that will be used.
-
-- diagnostic on dir not found.
-
-    If no directory is specified or found and described above, a [Test2::API](https://metacpan.org/pod/Test2::API)
-    diagnostic will be generated to let you know that no test lib directory
-    was found.
+Different in that, it doesn't die if there is no blib found and doesn't
+accept arguments (only the blib relative to the current directory works).
 
 # CAVEATS
 
@@ -60,13 +25,8 @@ and may not work on platforms other than Windows and Unix.
 
 # SEE ALSO
 
-- [Test::Lib](https://metacpan.org/pod/Test::Lib)
-
-    Similar in principal, but more full featured, and pulls on several
-    modules, polluting the namespace.
-
 - [blib](https://metacpan.org/pod/blib)
-- [blib::tiny](https://metacpan.org/pod/blib::tiny)
+- [tlib](https://metacpan.org/pod/tlib)
 
 # AUTHOR
 
