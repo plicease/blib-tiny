@@ -61,6 +61,16 @@ not to pollute the namespace for tests or command lines, so it doesn't
 even try to use native directory specifications with L<File::Spec> etc,
 and may not work on platforms other than Windows and Unix.
 
+=head1 SEE ALSO
+
+=over 4
+
+=item L<blib>
+
+=item L<blib::tiny>
+
+=back
+
 =cut
 
 sub import
@@ -85,7 +95,7 @@ sub import
     # avoid pulling in Test2::API unless we need it.
     require Test2::API;
     my $context = Test2::API::context();
-    $context->diag("used tlib, but no t/lib exists!");
+    $context->diag("tried to use tlib, but no t/lib exists!");
     $context->release;
     return;
   }

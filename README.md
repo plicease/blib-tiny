@@ -58,6 +58,11 @@ not to pollute the namespace for tests or command lines, so it doesn't
 even try to use native directory specifications with [File::Spec](https://metacpan.org/pod/File::Spec) etc,
 and may not work on platforms other than Windows and Unix.
 
+# SEE ALSO
+
+- [blib](https://metacpan.org/pod/blib)
+- [blib::tiny](https://metacpan.org/pod/blib::tiny)
+
 # AUTHOR
 
 Graham Ollis <plicease@cpan.org>

@@ -3,6 +3,7 @@ use tlib;
 
 subtest 'default works' => sub {
 
+  local $@ = '';
   eval { require Foo };
   is "$@", "";
   is \%INC, hash { field 'Foo.pm' => D(); etc };
