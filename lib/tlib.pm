@@ -65,6 +65,11 @@ and may not work on platforms other than Windows and Unix.
 
 =over 4
 
+=item L<Test::Lib>
+
+Similar in principal, but more full featured, and pulls on several
+modules, polluting the namespace.
+
 =item L<blib>
 
 =item L<blib::tiny>

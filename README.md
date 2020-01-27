@@ -60,6 +60,11 @@ and may not work on platforms other than Windows and Unix.
 
 # SEE ALSO
 
+- [Test::Lib](https://metacpan.org/pod/Test::Lib)
+
+    Similar in principal, but more full featured, and pulls on several
+    modules, polluting the namespace.
+
 - [blib](https://metacpan.org/pod/blib)
 - [blib::tiny](https://metacpan.org/pod/blib::tiny)
 
