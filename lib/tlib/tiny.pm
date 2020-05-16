@@ -1,4 +1,4 @@
-package tlib;
+package tlib::tiny;
 
 use strict;
 use warnings;
@@ -12,12 +12,12 @@ use 5.008001;
 From your .t file
 
  use Test::More;
- use tlib;
+ use tlib::tiny;
  ...
 
 From the command line
 
- perl -Mtlib t/foo.t
+ perl -Mtlib::tiny t/foo.t
 
 =head1 DESCRIPTION
 
@@ -33,8 +33,8 @@ There are some useful overrides, that are used in this order:
 
 =item argument
 
- use tlib $dir;
- perl -Mtlib=$dir
+ use tlib::tiny $dir;
+ perl -Mtlib::tiny=$dir
 
 If a directory is specified as an argument to the pragma, that will be used.
 
@@ -100,7 +100,7 @@ sub import
     # avoid pulling in Test2::API unless we need it.
     require Test2::API;
     my $context = Test2::API::context();
-    $context->diag("tried to use tlib, but no t/lib exists!");
+    $context->diag("tried to use tlib::tiny, but no t/lib exists!");
     $context->release;
     return;
   }
