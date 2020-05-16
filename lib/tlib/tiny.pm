@@ -1,7 +1,5 @@
 package tlib::tiny;
 
-use strict;
-use warnings;
 use 5.008001;
 
 # ABSTRACT: Like blib but for t/lib
@@ -22,8 +20,8 @@ From the command line
 =head1 DESCRIPTION
 
 This pragma is just a short cut for C<use lib 't/lib'> with some handy
-overrides.  Avoids using any modules other than the L<strict> and L<warnings>
-pragmas.
+overrides.  Avoids using any modules so as to reduce the change of
+introducing side effects.
 
 =head1 USAGE
 
@@ -57,7 +55,7 @@ was found.
 =head1 CAVEATS
 
 This module avoids using any other modules (in-core or otherwise) so as
-not to pollute the namespace for tests or command lines, so it doesn't
+not to pollute %INC for tests or command lines, so it doesn't
 even try to use native directory specifications with L<File::Spec> etc,
 and may not work on platforms other than Windows and Unix.
 
@@ -109,5 +107,3 @@ sub import
 }
 
 1;
-
-

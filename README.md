@@ -10,11 +10,14 @@ perl -Mblib::tiny script [args...]
 
 # DESCRIPTION
 
-Works similar to [blib](https://metacpan.org/pod/blib) except it doesn't use any modules other than the
-pragma's [strict](https://metacpan.org/pod/strict) and [warnings](https://metacpan.org/pod/warnings) to avoid polluting the namespace.
+This works similar to [blib](https://metacpan.org/pod/blib), except it doesn't pull in any other
+modules.  This avoids introducing side effects of loading modules
+earlier or loading them at all compared to when they would be called
+without [blib](https://metacpan.org/pod/blib).
 
-Different in that, it doesn't die if there is no blib found and doesn't
-accept arguments (only the blib relative to the current directory works).
+It is different in that it does not die if there is no blib found,
+and doesn't accept any arguments (only the blib relative to the current
+directory is supported).
 
 # CAVEATS
 
@@ -26,7 +29,7 @@ and may not work on platforms other than Windows and Unix.
 # SEE ALSO
 
 - [blib](https://metacpan.org/pod/blib)
-- [tlib](https://metacpan.org/pod/tlib)
+- [tlib::tiny](https://metacpan.org/pod/tlib::tiny)
 
 # AUTHOR
 

@@ -1,7 +1,5 @@
 package blib::tiny;
 
-use strict;
-use warnings;
 use 5.008001;
 
 # ABSTRACT: Like blib but lighter
@@ -13,11 +11,14 @@ use 5.008001;
 
 =head1 DESCRIPTION
 
-Works similar to L<blib> except it doesn't use any modules other than the
-pragma's L<strict> and L<warnings> to avoid polluting the namespace.
+This works similar to L<blib>, except it doesn't pull in any other
+modules.  This avoids introducing side effects of loading modules
+earlier or loading them at all compared to when they would be called
+without L<blib>.
 
-Different in that, it doesn't die if there is no blib found and doesn't
-accept arguments (only the blib relative to the current directory works).
+It is different in that it does not die if there is no blib found,
+and doesn't accept any arguments (only the blib relative to the current
+directory is supported).
 
 =head1 CAVEATS
 
@@ -32,7 +33,7 @@ and may not work on platforms other than Windows and Unix.
 
 =item L<blib>
 
-=item L<tlib>
+=item L<tlib::tiny>
 
 =back
 
