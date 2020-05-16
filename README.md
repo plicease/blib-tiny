@@ -1,4 +1,4 @@
-# blib::tiny [![Build Status](https://secure.travis-ci.org/plicease/blib-tiny.png)](http://travis-ci.org/plicease/blib-tiny)
+# blib::tiny [![Build Status](https://travis-ci.org/plicease/blib-tiny.svg)](http://travis-ci.org/plicease/blib-tiny)
 
 Like blib but lighter
 
